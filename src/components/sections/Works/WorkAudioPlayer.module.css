@@ -1,0 +1,199 @@
+.playerCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.deckHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.vinylIconWrapper {
+  flex-shrink: 0;
+}
+
+.vinylRecord {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a2723 30%, #151412 31%, #24211e 60%, #171513 100%);
+  border: 2px solid var(--divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.spinning {
+  animation: spin 3.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vinylCenter {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid var(--bg-card);
+}
+
+.metaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.categoryBadge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.trackTitle {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.trackSubtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Таймлайн */
+.timelineWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.progressBarBg {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--accent);
+  transition: width 100ms linear;
+}
+
+.seekInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Управление */
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-top: var(--space-1);
+}
+
+.playButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background-color: var(--accent);
+  color: var(--text-main);
+  border: 1px solid var(--accent);
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+  cursor: pointer;
+}
+
+.playButton:hover {
+  background-color: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.volumeBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.muteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  padding: 4px;
+  transition: color 200ms ease;
+}
+
+.muteButton:hover {
+  color: var(--text-main);
+}
+
+.volumeInput {
+  width: 70px;
+  height: 4px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .playerCard {
+    padding: var(--space-3);
+  }
+
+  .trackTitle {
+    font-size: 19px;
+  }
+
+  .volumeInput {
+    width: 50px;
+  }
+}

@@ -1,0 +1,23 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  background-color: var(--accent);
+  color: var(--text-main);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.link:hover {
+  background-color: var(--accent-2);
+  border-color: var(--accent-2);
+}

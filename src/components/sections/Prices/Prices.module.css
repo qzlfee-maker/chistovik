@@ -1,0 +1,109 @@
+.tableWrapper {
+  background-color: var(--bg-card);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.headRow {
+  border-bottom: 1px solid var(--divider);
+  background-color: var(--bg-main);
+}
+
+.headCell,
+.headCellRight {
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.headCellRight {
+  text-align: right;
+}
+
+.row {
+  border-bottom: 1px solid var(--divider);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.serviceCell {
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.serviceName {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.serviceNote {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.priceCell {
+  padding: var(--space-3) var(--space-4);
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.note {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .headCell,
+  .headCellRight,
+  .serviceCell,
+  .priceCell {
+    padding: var(--space-2);
+  }
+
+  .serviceName {
+    font-size: 15px;
+  }
+
+  .serviceNote {
+    font-size: 13px;
+  }
+
+  .priceCell {
+    font-size: 14px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

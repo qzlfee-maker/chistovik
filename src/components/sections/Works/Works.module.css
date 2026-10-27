@@ -1,0 +1,91 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-4);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.wide {
+  grid-column: span 6;
+}
+
+.normal {
+  grid-column: span 6;
+}
+
+.tall {
+  grid-column: span 6;
+}
+
+.singleImageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 684 / 996;
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-top: 4px;
+}
+
+.captionTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.captionMeta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .wide,
+  .normal,
+  .tall {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    gap: var(--space-3);
+  }
+
+  .wide,
+  .normal,
+  .tall {
+    grid-column: span 12;
+  }
+
+  .caption {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

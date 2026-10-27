@@ -1,0 +1,137 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--divider);
+  transition:
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.scrolled {
+  background-color: var(--bg-card);
+  box-shadow: 0 2px 12px rgba(28, 26, 23, 0.06);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.navLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: color 200ms ease;
+}
+
+.navLink:hover {
+  color: var(--accent);
+}
+
+.desktopAction {
+  display: flex;
+  align-items: center;
+}
+
+.burgerButton {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-card);
+}
+
+.burgerLines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 18px;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--text-main);
+}
+
+.mobileMenu {
+  display: none;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--divider);
+  padding: var(--space-3);
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.mobileNavLink {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.mobileAction {
+  display: flex;
+}
+
+.fullWidthLink {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .desktopNav,
+  .desktopAction {
+    display: none;
+  }
+
+  .burgerButton {
+    display: inline-flex;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .container {
+    padding: 0 var(--space-2);
+    height: 68px;
+  }
+}

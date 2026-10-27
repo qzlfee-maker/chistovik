@@ -1,0 +1,149 @@
+.playerContainer {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.centerPlayButton {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--text-main);
+  border: 2px solid var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(28, 26, 23, 0.4);
+  transition:
+    transform 150ms ease,
+    background-color 150ms ease;
+  z-index: 4;
+}
+
+.centerPlayButton:hover {
+  background-color: var(--accent-2);
+  transform: scale(1.05);
+}
+
+.controlsBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(28, 26, 23, 0.92) 0%, rgba(28, 26, 23, 0.4) 75%, transparent 100%);
+  padding: var(--space-2) var(--space-3) var(--space-1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: opacity 250ms ease;
+  z-index: 5;
+}
+
+.controlsVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.controlsHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.progressBarWrapper {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(245, 240, 232, 0.25);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--accent);
+  transition: width 80ms linear;
+}
+
+.seekInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.buttonsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftGroup,
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.controlButton {
+  color: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color 150ms ease;
+}
+
+.controlButton:hover {
+  color: var(--accent);
+}
+
+.timeDisplay {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--bg-card);
+  margin-left: 4px;
+}
+
+.volumeInput {
+  width: 48px;
+  height: 4px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .controlsBar {
+    padding: var(--space-1);
+  }
+
+  .volumeInput {
+    display: none;
+  }
+}
